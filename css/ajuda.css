@@ -1,0 +1,49 @@
+@import url(./global.css);
+
+div{
+    display: flex;
+    flex-direction: column;
+    width: 51.6rem;
+}
+main{
+    padding-top: 10rem;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+hr{
+    width: 100%;
+    border: 0.2rem solid #0c8293;
+    margin-bottom: 2.1rem;
+}
+input, textarea{
+    width: 100%;
+    border: 0.1rem solid #0c8293;
+    border-radius: 1.6rem;
+    margin-bottom: 1.6rem;
+    padding-left: 1.6rem;
+    font-size: 1.6rem;
+}
+h1{
+    font-size: 5.4rem;
+    align-self: center;
+}
+input[type="submit"]{
+    background-color: #0c8293;
+    color: white;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    width: 23rem;
+    height: 3.5rem;
+    align-self: center;
+    text-align: center;
+    line-height: 3.5rem;
+}
+#perguntas{
+    color: #0c8293;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    align-self: center;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoluTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="./pages/conteudos.html" class="main">Conteúdos</a></li>
+                <li><a href="">Jogos</a></li>
+                <li><a href="./pages/ajuda.html">Ajuda</a></li>
+                <li><a href="./pages/sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+        <h1>
+            Adaptando Ideias, <span>Evoluindo Conhecimento.</span>
+        </h1>
+        <p>
+            Na Evolutech, você vai embarcar em uma jornada fascinante pela história da vida na Terra. Aqui, você aprenderá como as espécies evoluíram ao longo do tempo e como os processos naturais moldaram a diversidade que vemos hoje no mundo. Explore conceitos essenciais como seleção natural, adaptação, e descubra o impacto das extinções no equilíbrio ecológico.
+        </p>
+        <button onclick="location.href='./pages/conteudos.html'">APRENDA</button>
+    </div>
+    <div class="slider-container">
+        <div class="slider" id="meuSlider">
+            <div class="slide" style="background-image: url('./assets/img1.jpg');"></div>
+            <div class="slide" style="background-image: url('./assets/img2.jpg');"></div>
+            <div class="slide" style="background-image: url('./assets/img3.jpg');"></div>
+        </div>
+        <div class="slider-nav" id="sliderNav">
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('meuSlider');
+        const sliderNav = document.getElementById('sliderNav');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        // Cria as bolinhas de navegação
+        for (let i = 0; i < slides.length; i++) {
+            const navItem = document.createElement('button');
+            navItem.classList.add('slider-nav-item');
+            navItem.addEventListener('click', () => goToSlide(i));
+            sliderNav.appendChild(navItem);
+        }
+
+        const navItems = document.querySelectorAll('.slider-nav-item');
+        navItems[0].classList.add('active'); // Marca a primeira bolinha como ativa
+
+        function goToSlide(n) {
+            slider.style.transform = `translateX(-${n * 100}%)`;
+            currentSlide = n;
+            updateNav();
+        }
+
+        function updateNav() {
+            navItems.forEach((item, index) => {
+                if (index === currentSlide) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Auto-avançar (opcional)
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        }, 3000); // Muda a cada 3 segundos
+
+    </script>
+
+</body>
+</html>

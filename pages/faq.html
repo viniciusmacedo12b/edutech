@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head> 
+<body>
+    <header>
+        <a href="../index.html"><img src="../assets/logo.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="./conteudos.html" >Conteúdos</a></li>
+                <li><a href="">Jogos</a></li>
+                <li><a href="./ajuda.html" class="main">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="faq-container">
+        <h1 class="faq-titulo">Perguntas Frequentes</h1>
+
+        <div class="faq-pergunta">Oque e evolutech?</div>
+        <div class="faq-resposta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis alias fugiat eaque voluptatem inventore culpa sed, praesentium molestias optio fuga? Quam nostrum id iure fugiat consequuntur repellat iste tenetur doloremque!</div>
+
+        <div class="faq-pergunta">Oque fazemos?</div>
+        <div class="faq-resposta">Resposta para a pergunta 2...</div>
+
+        <div class="faq-pergunta">Nossos objetivos</div>
+        <div class="faq-resposta">Resposta para a pergunta 3...</div>
+
+        <div class="faq-pergunta">Nossas propostas</div>
+        <div class="faq-resposta">Resposta para a pergunta 4...</div>
+
+        </div>
+
+        <script>
+            const perguntas = document.querySelectorAll('.faq-pergunta');
+    
+            perguntas.forEach(pergunta => {
+                pergunta.addEventListener('click', () => {
+                    pergunta.classList.toggle('ativo');
+                });
+            });
+        </script>
+</body>
